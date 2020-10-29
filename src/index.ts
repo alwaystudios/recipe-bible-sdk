@@ -9,7 +9,7 @@ import {
   RecipeRecord,
   Step,
 } from './recipe/recipeTypes'
-import { testRecipe, testRecipes } from './test/testRecipes'
+import { testIngredient, testRecipe, testRecipes, testStep } from './test/testRecipes'
 import { validateRecipeSchema } from './recipe/validateRecipeSchema'
 import { validateRecipe, MAX_INGREDIENTS, MAX_STEPS } from './recipe/validateRecipe'
 
@@ -24,6 +24,8 @@ export {
   Recipe,
   testRecipe,
   testRecipes,
+  testIngredient,
+  testStep,
   SchemaError,
   validateRecipeSchema,
   validateRecipe,

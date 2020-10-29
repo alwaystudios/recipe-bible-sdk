@@ -1,7 +1,7 @@
 {
   "name": "@alwaystudios/recipe-bible-sdk",
   "author": "Alwaystudios Ltd.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "engines": {
     "node": ">=14"
