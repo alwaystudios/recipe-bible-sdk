@@ -1,7 +1,7 @@
 {
   "name": "@alwaystudios/recipe-bible-sdk",
   "author": "Alwaystudios Ltd.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "engines": {
     "node": ">=14"
@@ -24,7 +24,7 @@
     "install-peers": "install-peers -f",
     "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --write 'src/**/*.{js,ts,tsx,json,css,md}'",
-    "build": "yarn generate-recipe-schema && rollup -c",
+    "build": "rollup -c",
     "clean": "sh cleanup.sh"
   },
   "husky": {

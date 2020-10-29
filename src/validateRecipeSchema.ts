@@ -12,5 +12,3 @@ export const validateRecipeSchema = (data: any): Recipe => {
 
   return instance
 }
-
-// todo: express middleware to use this
