@@ -1,0 +1,143 @@
+{
+  "$ref": "#/definitions/Recipe",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Ingredient": {
+      "additionalProperties": false,
+      "properties": {
+        "measure": {
+          "$ref": "#/definitions/Measure"
+        },
+        "name": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": ["string", "number"]
+        }
+      },
+      "required": ["name", "measure", "quantity"],
+      "type": "object"
+    },
+    "Measure": {
+      "enum": ["qty", "g", "ml", "tsp", "tbsp", "handful", "cup", "slice(s)", "kg"],
+      "type": "string"
+    },
+    "Nutrition": {
+      "additionalProperties": false,
+      "properties": {
+        "calories": {
+          "type": "string"
+        },
+        "carbs": {
+          "type": "string"
+        },
+        "fat": {
+          "type": "string"
+        },
+        "fibre": {
+          "type": "string"
+        },
+        "protein": {
+          "type": "string"
+        },
+        "salt": {
+          "type": "string"
+        },
+        "satFat": {
+          "type": "string"
+        },
+        "sugar": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Recipe": {
+      "additionalProperties": false,
+      "properties": {
+        "categories": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "cookingTime": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number"
+        },
+        "imgSrc": {
+          "type": "string"
+        },
+        "ingredients": {
+          "items": {
+            "$ref": "#/definitions/Ingredient"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/RecipeMetadata"
+        },
+        "nutrition": {
+          "$ref": "#/definitions/Nutrition"
+        },
+        "servings": {
+          "type": "number"
+        },
+        "steps": {
+          "items": {
+            "$ref": "#/definitions/Step"
+          },
+          "type": "array"
+        },
+        "story": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "categories",
+        "cookingTime",
+        "imgSrc",
+        "ingredients",
+        "metadata",
+        "nutrition",
+        "servings",
+        "steps"
+      ],
+      "type": "object"
+    },
+    "RecipeMetadata": {
+      "additionalProperties": false,
+      "properties": {
+        "focused": {
+          "type": "boolean"
+        },
+        "published": {
+          "type": "boolean"
+        },
+        "reviewed": {
+          "type": "boolean"
+        }
+      },
+      "required": ["focused", "reviewed", "published"],
+      "type": "object"
+    },
+    "Step": {
+      "additionalProperties": false,
+      "properties": {
+        "imgSrc": {
+          "type": "string"
+        },
+        "step": {
+          "type": "string"
+        }
+      },
+      "required": ["step"],
+      "type": "object"
+    }
+  }
+}
