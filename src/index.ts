@@ -12,6 +12,7 @@ import {
 import { testIngredient, testRecipe, testRecipes, testStep } from './test/testRecipes'
 import { validateRecipeSchema } from './recipe/validateRecipeSchema'
 import { validateRecipe, MAX_INGREDIENTS, MAX_STEPS } from './recipe/validateRecipe'
+import { RecipeValidationError } from './errorTypes'
 
 export {
   RecipeList,
@@ -27,6 +28,7 @@ export {
   testIngredient,
   testStep,
   SchemaError,
+  RecipeValidationError,
   validateRecipeSchema,
   validateRecipe,
   MAX_INGREDIENTS,
