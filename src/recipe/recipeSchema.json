@@ -106,7 +106,8 @@
         "metadata",
         "nutrition",
         "servings",
-        "steps"
+        "steps",
+        "title"
       ],
       "type": "object"
     },

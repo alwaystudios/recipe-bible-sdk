@@ -1,7 +1,7 @@
 import { validate } from 'jsonschema'
-import { Recipe } from './recipetypes'
-import schema from './recipe-schema.json'
-import { SchemaError } from './schemaError'
+import { Recipe } from './recipeTypes'
+import schema from './recipeSchema.json'
+import { SchemaError } from '../errorTypes'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const validateRecipeSchema = (data: any): Recipe => {

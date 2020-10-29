@@ -1,4 +1,4 @@
-import { testRecipe } from '.'
+import { testRecipe } from '../test/testRecipes'
 import { validateRecipeSchema } from './validateRecipeSchema'
 
 describe('validate recipe schema', () => {

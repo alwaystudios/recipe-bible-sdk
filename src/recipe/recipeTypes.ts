@@ -1,3 +1,5 @@
+// yarn generate-recipe-schema
+
 export type RecipeList = ReadonlyArray<{
   title: string
 }>
@@ -46,5 +48,5 @@ export type RecipeRecord = {
 
 export type Recipe = RecipeRecord & {
   id?: number
-  title?: string
+  title: string
 }

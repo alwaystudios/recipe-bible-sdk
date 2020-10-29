@@ -8,9 +8,10 @@ import {
   RecipeMetadata,
   RecipeRecord,
   Step,
-} from './recipetypes'
+} from './recipe/recipeTypes'
 import { testRecipe, testRecipes } from './test/testRecipes'
-import { validateRecipeSchema } from './validateRecipeSchema'
+import { validateRecipeSchema } from './recipe/validateRecipeSchema'
+import { validateRecipe, MAX_INGREDIENTS, MAX_STEPS } from './recipe/validateRecipe'
 
 export {
   RecipeList,
@@ -25,4 +26,7 @@ export {
   testRecipes,
   SchemaError,
   validateRecipeSchema,
+  validateRecipe,
+  MAX_INGREDIENTS,
+  MAX_STEPS,
 }

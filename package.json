@@ -1,7 +1,7 @@
 {
   "name": "@alwaystudios/recipe-bible-sdk",
   "author": "Alwaystudios Ltd.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "engines": {
     "node": ">=14"
@@ -19,7 +19,7 @@
     "access": "public"
   },
   "scripts": {
-    "generate-recipe-schema": "./node_modules/.bin/ts-json-schema-generator --path src/recipeTypes.ts --type 'Recipe' --out 'src/recipe-schema.json'",
+    "generate-recipe-schema": "./node_modules/.bin/ts-json-schema-generator --path src/recipe/recipeTypes.ts --type 'Recipe' --out 'src/recipe/recipeSchema.json'",
     "test": "jest --maxWorkers=4 src",
     "install-peers": "install-peers -f",
     "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
