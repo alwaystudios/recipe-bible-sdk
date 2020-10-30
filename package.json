@@ -1,7 +1,7 @@
 {
   "name": "@alwaystudios/recipe-bible-sdk",
   "author": "Alwaystudios Ltd.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "engines": {
     "node": ">=14"
@@ -34,12 +34,14 @@
     }
   },
   "dependencies": {
-    "jsonschema": "^1.4.0"
+    "jsonschema": "^1.4.0",
+    "ramda": "^0.27.1"
   },
   "peerDependencies": {},
   "devDependencies": {
     "@rollup/plugin-json": "^4.1.0",
     "@types/jest": "^26.0.14",
+    "@types/ramda": "^0.27.31",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
     "eslint": "^7.10.0",

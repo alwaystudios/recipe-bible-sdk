@@ -13,6 +13,7 @@ import { testIngredient, testRecipe, testRecipes, testStep } from './test/testRe
 import { validateRecipeSchema } from './recipe/validateRecipeSchema'
 import { validateRecipe, MAX_INGREDIENTS, MAX_STEPS } from './recipe/validateRecipe'
 import { RecipeValidationError } from './errorTypes'
+import { emptyRecipeRecord, toRecipeRecord } from './recipe/recipeTransformer'
 
 export {
   RecipeList,
@@ -33,4 +34,6 @@ export {
   validateRecipe,
   MAX_INGREDIENTS,
   MAX_STEPS,
+  toRecipeRecord,
+  emptyRecipeRecord,
 }
