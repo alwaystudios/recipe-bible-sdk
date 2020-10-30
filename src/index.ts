@@ -14,6 +14,15 @@ import { validateRecipeSchema } from './recipe/validateRecipeSchema'
 import { validateRecipe, MAX_INGREDIENTS, MAX_STEPS } from './recipe/validateRecipe'
 import { RecipeValidationError } from './errorTypes'
 import { emptyRecipeRecord, toRecipeRecord } from './recipe/recipeTransformer'
+import { truthy } from './truthy'
+import { CATEGORIES } from './categories'
+import {
+  calculateRatingDetails,
+  depluralize,
+  normalizeCategories,
+  normalizeMeasure,
+  pluralize,
+} from './entityUtils'
 
 export {
   RecipeList,
@@ -36,4 +45,11 @@ export {
   MAX_STEPS,
   toRecipeRecord,
   emptyRecipeRecord,
+  truthy,
+  CATEGORIES,
+  calculateRatingDetails,
+  normalizeCategories,
+  normalizeMeasure,
+  pluralize,
+  depluralize,
 }
