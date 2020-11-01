@@ -2,6 +2,10 @@
 
 export type RecipeList = ReadonlyArray<{
   title: string
+  imgSrc: string
+  categories: string[]
+  ingredients: string[]
+  metadata: RecipeMetadata
 }>
 
 export type Measure = 'qty' | 'g' | 'ml' | 'tsp' | 'tbsp' | 'handful' | 'cup' | 'slice(s)' | 'kg'
