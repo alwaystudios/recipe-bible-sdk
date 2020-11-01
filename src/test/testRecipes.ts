@@ -1,5 +1,6 @@
 import { Recipe, Ingredient, RecipeList, Step, Measure } from '../recipe/recipeTypes'
 import sampleRecipe from './super-tasty-pasta-bolognese.json'
+import faker from 'faker'
 
 export const testIngredient = (
   name = 'some ingredient',
@@ -23,38 +24,20 @@ export const testRecipe = (title: string, id?: number): Recipe => ({
   ingredients: sampleRecipe.ingredients as Ingredient[],
 })
 
+export const testRecipeListEntry = () => ({
+  title: faker.random.word(),
+  imgSrc: faker.image.imageUrl(),
+  categories: [faker.random.word()],
+  ingredients: [faker.random.word()],
+  metadata: {
+    focused: false,
+    reviewed: true,
+    published: true,
+  },
+})
+
 export const testRecipes = (): RecipeList => [
-  {
-    title: 'messy-thai-pork-omelette',
-  },
-  {
-    title: 'chicken-salad-with-ginger-dressing',
-  },
-  {
-    title: 'cashew-nuts-and-mango-protein-bites',
-  },
-  {
-    title: 'baked-salmon-and-aubergine-rainbow-salad',
-  },
-  {
-    title: 'burrito-bowl',
-  },
-  {
-    title: 'chicken-tabbouleh-salad',
-  },
-  {
-    title: "aunt-alicia's-sponge-cake",
-  },
-  {
-    title: 'no-knead-versatile-rye-bread-recipe',
-  },
-  {
-    title: 'cream-of-potatoes,-squash,-brussel-sprouts-soup',
-  },
-  {
-    title: "bangers'n'mash-with-homemade-gravy",
-  },
-  {
-    title: 'peanut-butter-dressing',
-  },
+  testRecipeListEntry(),
+  testRecipeListEntry(),
+  testRecipeListEntry(),
 ]
