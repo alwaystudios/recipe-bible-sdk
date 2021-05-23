@@ -1,10 +1,10 @@
 import { Recipe, Ingredient, Step, User } from '../types'
-import { lorem, random, system } from 'faker'
+import { datatype, lorem, system } from 'faker'
 
 export const testIngredient = (overrides?: Partial<Ingredient>): Ingredient => ({
   name: lorem.word(),
   measure: 'qty',
-  quantity: random.number(10),
+  quantity: datatype.number(10),
   ...overrides,
 })
 

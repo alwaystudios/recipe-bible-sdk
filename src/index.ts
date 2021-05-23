@@ -1,5 +1,5 @@
 import { SchemaError } from 'jsonschema'
-import { Ingredient, Measure, Nutrition, Recipe, Step } from './types'
+import { Ingredient, Measure, Nutrition, Recipe, Step, User } from './types'
 import { testIngredient, testRecipe, testStep, testUser } from './test/testFactories'
 import { validateRecipeSchema } from './recipe/validateRecipeSchema'
 import { validateRecipe, MAX_INGREDIENTS, MAX_STEPS } from './recipe/validateRecipe'
@@ -21,6 +21,7 @@ export {
   Step,
   Nutrition,
   Recipe,
+  User,
   testUser,
   testRecipe,
   testIngredient,
