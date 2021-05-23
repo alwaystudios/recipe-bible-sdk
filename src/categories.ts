@@ -1,4 +1,6 @@
-export const CATEGORIES = [
+import { Category } from './types'
+
+export const CATEGORIES: Category[] = [
   'Chicken',
   'Meat',
   'Fish',

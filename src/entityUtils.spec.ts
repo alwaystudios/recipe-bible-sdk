@@ -5,7 +5,7 @@ import {
   normalizeCategories,
   calculateRatingDetails,
 } from './entityUtils'
-import { Measure } from './recipe/recipeTypes'
+import { Measure } from './types'
 import { CATEGORIES } from './categories'
 
 describe('entity utils', () => {

@@ -2,6 +2,22 @@
   "$ref": "#/definitions/Recipe",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
+    "Category": {
+      "enum": [
+        "Chicken",
+        "Meat",
+        "Fish",
+        "Pasta",
+        "Salads",
+        "Vegetarian",
+        "Vegan",
+        "Soups",
+        "Snacks",
+        "Desserts",
+        "Other"
+      ],
+      "type": "string"
+    },
     "Ingredient": {
       "additionalProperties": false,
       "properties": {
@@ -15,38 +31,36 @@
           "type": ["string", "number"]
         }
       },
-      "required": ["name", "measure", "quantity"],
+      "required": ["name", "quantity", "measure"],
       "type": "object"
     },
     "Measure": {
       "enum": ["qty", "g", "ml", "tsp", "tbsp", "handful", "cup", "slice(s)", "kg"],
       "type": "string"
     },
+    "Metadata": {
+      "additionalProperties": false,
+      "properties": {
+        "focused": {
+          "type": "boolean"
+        },
+        "published": {
+          "type": "boolean"
+        }
+      },
+      "required": ["focused", "published"],
+      "type": "object"
+    },
     "Nutrition": {
       "additionalProperties": false,
       "properties": {
-        "calories": {
-          "type": "string"
-        },
         "carbs": {
           "type": "string"
         },
         "fat": {
           "type": "string"
         },
-        "fibre": {
-          "type": "string"
-        },
         "protein": {
-          "type": "string"
-        },
-        "salt": {
-          "type": "string"
-        },
-        "satFat": {
-          "type": "string"
-        },
-        "sugar": {
           "type": "string"
         }
       },
@@ -57,15 +71,12 @@
       "properties": {
         "categories": {
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/Category"
           },
           "type": "array"
         },
         "cookingTime": {
           "type": "string"
-        },
-        "id": {
-          "type": "number"
         },
         "imgSrc": {
           "type": "string"
@@ -77,10 +88,19 @@
           "type": "array"
         },
         "metadata": {
-          "$ref": "#/definitions/RecipeMetadata"
+          "$ref": "#/definitions/Metadata"
         },
         "nutrition": {
           "$ref": "#/definitions/Nutrition"
+        },
+        "prepTime": {
+          "type": "string"
+        },
+        "ratings": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
         },
         "servings": {
           "type": "number"
@@ -96,35 +116,29 @@
         },
         "title": {
           "type": "string"
+        },
+        "youWillNeed": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "required": [
-        "categories",
-        "cookingTime",
         "imgSrc",
+        "title",
+        "story",
+        "categories",
         "ingredients",
-        "metadata",
-        "nutrition",
-        "servings",
         "steps",
-        "title"
+        "metadata",
+        "ratings",
+        "cookingTime",
+        "prepTime",
+        "youWillNeed",
+        "servings",
+        "nutrition"
       ],
-      "type": "object"
-    },
-    "RecipeMetadata": {
-      "additionalProperties": false,
-      "properties": {
-        "focused": {
-          "type": "boolean"
-        },
-        "published": {
-          "type": "boolean"
-        },
-        "reviewed": {
-          "type": "boolean"
-        }
-      },
-      "required": ["focused", "reviewed", "published"],
       "type": "object"
     },
     "Step": {

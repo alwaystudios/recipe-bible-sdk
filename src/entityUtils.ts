@@ -1,4 +1,4 @@
-import { Measure } from './recipe/recipeTypes'
+import { Measure } from './types'
 import { CATEGORIES } from './categories'
 import { truthy } from './truthy'
 
@@ -36,7 +36,7 @@ export const calculateRatingDetails = (ratings: number[]): RatingDetail => {
 }
 
 export const normalizeCategories = (list: string[]): string[] =>
-  list.map((c) => (CATEGORIES.includes(c) ? c : null)).filter(truthy)
+  list.map((c) => (CATEGORIES.includes(c as any) ? c : null)).filter(truthy)
 
 const isHalfOrIsNan = (quantity: string) => {
   const value = quantity.toLowerCase()

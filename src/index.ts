@@ -1,19 +1,9 @@
 import { SchemaError } from 'jsonschema'
-import {
-  Ingredient,
-  Measure,
-  Nutrition,
-  Recipe,
-  RecipeList,
-  RecipeMetadata,
-  RecipeRecord,
-  Step,
-} from './recipe/recipeTypes'
-import { testIngredient, testRecipe, testRecipes, testStep } from './test/testRecipes'
+import { Ingredient, Measure, Nutrition, Recipe, Step } from './types'
+import { testIngredient, testRecipe, testStep } from './test/testFactories'
 import { validateRecipeSchema } from './recipe/validateRecipeSchema'
 import { validateRecipe, MAX_INGREDIENTS, MAX_STEPS } from './recipe/validateRecipe'
 import { RecipeValidationError } from './errorTypes'
-import { emptyRecipeRecord, toRecipeRecord } from './recipe/recipeTransformer'
 import { truthy } from './truthy'
 import { CATEGORIES } from './categories'
 import {
@@ -23,18 +13,15 @@ import {
   normalizeMeasure,
   pluralize,
 } from './entityUtils'
+import { kebabify, dekebabify } from './kebabify'
 
 export {
-  RecipeList,
   Measure,
   Ingredient,
   Step,
   Nutrition,
-  RecipeMetadata,
-  RecipeRecord,
   Recipe,
   testRecipe,
-  testRecipes,
   testIngredient,
   testStep,
   SchemaError,
@@ -43,8 +30,6 @@ export {
   validateRecipe,
   MAX_INGREDIENTS,
   MAX_STEPS,
-  toRecipeRecord,
-  emptyRecipeRecord,
   truthy,
   CATEGORIES,
   calculateRatingDetails,
@@ -52,4 +37,6 @@ export {
   normalizeMeasure,
   pluralize,
   depluralize,
+  kebabify,
+  dekebabify,
 }

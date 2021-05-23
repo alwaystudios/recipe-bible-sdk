@@ -1,5 +1,5 @@
 /* eslint functional/immutable-data: 0 */
-import { Recipe } from './recipeTypes'
+import { Recipe } from '../types'
 import { RecipeValidationError } from '../errorTypes'
 
 export const MAX_INGREDIENTS = 40

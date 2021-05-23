@@ -1,8 +1,8 @@
 import { RecipeValidationError } from '../errorTypes'
-import { testIngredient, testRecipe, testStep } from '../test/testRecipes'
+import { testIngredient, testRecipe, testStep } from '../test/testFactories'
 import { MAX_INGREDIENTS, MAX_STEPS, validateRecipe } from './validateRecipe'
 
-const recipe = testRecipe('test')
+const recipe = testRecipe()
 
 describe('validate recipes', () => {
   it('passes validation for a complete recipe', () => {

@@ -1,4 +1,4 @@
-import { testRecipe } from '../test/testRecipes'
+import { testRecipe } from '../test/testFactories'
 import { validateRecipeSchema } from './validateRecipeSchema'
 
 describe('validate recipe schema', () => {
@@ -13,7 +13,7 @@ describe('validate recipe schema', () => {
   })
 
   it('fails for unsupported field', () => {
-    expect(() => validateRecipeSchema({ ...testRecipe('test'), unsupported: true })).toThrowError(
+    expect(() => validateRecipeSchema({ ...testRecipe(), unsupported: true })).toThrowError(
       expect.objectContaining({
         message:
           'Invalid recipe schema: ID = undefined: instance is not allowed to have the additional property "unsupported"',
@@ -22,7 +22,7 @@ describe('validate recipe schema', () => {
   })
 
   it('fails for invalid type on title', () => {
-    const invalidrecipe = { ...testRecipe('test'), title: 1 }
+    const invalidrecipe = { ...testRecipe(), title: 1 }
     expect(() => validateRecipeSchema(invalidrecipe)).toThrowError(
       expect.objectContaining({
         message: 'Invalid recipe schema: ID = undefined: instance.title is not of a type(s) string',
@@ -31,13 +31,13 @@ describe('validate recipe schema', () => {
   })
 
   it('passes for valid recipe', () => {
-    const recipe = testRecipe('test')
+    const recipe = testRecipe()
     const result = validateRecipeSchema(recipe)
     expect(result).toEqual(recipe)
   })
 
   it('passes for valid recipe with empty string title', () => {
-    const recipe = testRecipe('')
+    const recipe = testRecipe()
     const result = validateRecipeSchema(recipe)
     expect(result).toEqual(recipe)
   })

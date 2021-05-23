@@ -1,5 +1,5 @@
 import { validate } from 'jsonschema'
-import { Recipe } from './recipeTypes'
+import { Recipe } from '../types'
 import schema from './recipeSchema.json'
 import { SchemaError } from '../errorTypes'
 
