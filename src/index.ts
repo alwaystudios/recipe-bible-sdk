@@ -1,6 +1,6 @@
 import { SchemaError } from 'jsonschema'
 import { Ingredient, Measure, Nutrition, Recipe, Step } from './types'
-import { testIngredient, testRecipe, testStep } from './test/testFactories'
+import { testIngredient, testRecipe, testStep, testUser } from './test/testFactories'
 import { validateRecipeSchema } from './recipe/validateRecipeSchema'
 import { validateRecipe, MAX_INGREDIENTS, MAX_STEPS } from './recipe/validateRecipe'
 import { RecipeValidationError } from './errorTypes'
@@ -21,6 +21,7 @@ export {
   Step,
   Nutrition,
   Recipe,
+  testUser,
   testRecipe,
   testIngredient,
   testStep,
