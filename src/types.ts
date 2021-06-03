@@ -53,6 +53,7 @@ export type Recipe = {
 
 export type User = {
   'https://recipebible.net/roles': string[]
+  isAdmin: boolean
   given_name: string
   family_name: string
   nickname: string

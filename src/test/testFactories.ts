@@ -39,6 +39,7 @@ export const testRecipe = (overrides?: Partial<Recipe>): Recipe => ({
 
 export const testUser = (overrides?: Partial<User>): User => ({
   'https://recipebible.net/roles': ['admin'],
+  isAdmin: true,
   given_name: 'Gary',
   family_name: 'Alway',
   nickname: 'garyalway',
