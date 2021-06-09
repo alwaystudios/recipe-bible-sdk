@@ -12,10 +12,12 @@ import {
   normalizeCategories,
   normalizeMeasure,
   pluralize,
+  recipeTitleTransformer,
 } from './entityUtils'
 import { kebabify, dekebabify } from './kebabify'
 
 export {
+  recipeTitleTransformer,
   Measure,
   Ingredient,
   Step,

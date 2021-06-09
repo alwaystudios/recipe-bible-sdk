@@ -1,6 +1,7 @@
 import { Measure } from './types'
 import { CATEGORIES } from './categories'
 import { truthy } from './truthy'
+import { dekebabify } from './kebabify'
 
 type RatingDetail = {
   averageRating: number
@@ -105,4 +106,9 @@ export const depluralize = (word: string): string => {
     : word.endsWith('ss')
     ? word
     : word.replace(/s\s*$/, '')
+}
+
+export const recipeTitleTransformer = (title: string) => {
+  const name = dekebabify(title)
+  return name.charAt(0).toUpperCase() + name.slice(1)
 }

@@ -4,11 +4,16 @@ import {
   normalizeMeasure,
   normalizeCategories,
   calculateRatingDetails,
+  recipeTitleTransformer,
 } from './entityUtils'
 import { Measure } from './types'
 import { CATEGORIES } from './categories'
 
 describe('entity utils', () => {
+  it('recipeTitleTransformer', () => {
+    expect(recipeTitleTransformer('  this-is-my-recipe  ')).toBe('This is my recipe')
+  })
+
   describe('calculateRatingDetails', () => {
     it('calculates average ratings for an array of ratings', () => {
       const ratings = [2, 3, 5, 5, 5]
