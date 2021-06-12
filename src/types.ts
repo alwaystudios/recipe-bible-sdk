@@ -33,6 +33,7 @@ export type Ingredient = {
   name: string
   quantity: string | number
   measure: Measure
+  imgSrc?: string
 }
 
 export type Recipe = {
