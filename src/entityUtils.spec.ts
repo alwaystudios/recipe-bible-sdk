@@ -5,11 +5,16 @@ import {
   normalizeCategories,
   calculateRatingDetails,
   recipeTitleTransformer,
+  toSlug,
 } from './entityUtils'
 import { Measure } from './types'
 import { CATEGORIES } from './categories'
 
 describe('entity utils', () => {
+  it('toSlug', () => {
+    expect(toSlug('  This is My recipe sluG  ')).toBe('this-is-my-recipe-slug')
+  })
+
   it('recipeTitleTransformer', () => {
     expect(recipeTitleTransformer('  this-is-my-recipe  ')).toBe('This is my recipe')
   })

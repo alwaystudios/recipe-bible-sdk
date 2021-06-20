@@ -1,7 +1,7 @@
 import { Measure } from './types'
 import { CATEGORIES } from './categories'
 import { truthy } from './truthy'
-import { dekebabify } from './kebabify'
+import { dekebabify, kebabify } from './kebabify'
 
 type RatingDetail = {
   averageRating: number
@@ -112,3 +112,5 @@ export const recipeTitleTransformer = (title: string) => {
   const name = dekebabify(title)
   return name.charAt(0).toUpperCase() + name.slice(1)
 }
+
+export const toSlug = (value: string) => kebabify(value.toLocaleLowerCase())
