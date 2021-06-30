@@ -1,12 +1,32 @@
 import { RecipeValidationError } from '../errorTypes'
 import { testIngredient, testRecipe, testStep } from '../test/testFactories'
-import { MAX_INGREDIENTS, MAX_STEPS, validateRecipe } from './validateRecipe'
+import {
+  MAX_INGREDIENTS,
+  MAX_STEPS,
+  MAX_STEP_TEXT,
+  MAX_TITLE,
+  validateRecipe,
+} from './validateRecipe'
 
 const recipe = testRecipe()
 
 describe('validate recipes', () => {
   it('passes validation for a complete recipe', () => {
     expect(validateRecipe(recipe)).toBe(null)
+  })
+
+  it('failes validation for a recipe a title that exceeds the max length', () => {
+    const title = [...Array(MAX_TITLE + 1)].map(() => 'a').join('')
+    expect(validateRecipe({ ...recipe, title })).toEqual(
+      new RecipeValidationError('Recipe is invalid', [`exceeds max title length: ${MAX_TITLE}`]),
+    )
+  })
+
+  it('failes validation for a recipe with steps that exceed the max length', () => {
+    const step = [...Array(MAX_STEP_TEXT + 1)].map(() => 'a').join('')
+    expect(validateRecipe({ ...recipe, steps: [{ step }] })).toEqual(
+      new RecipeValidationError('Recipe is invalid', [`exceeds max step length: ${MAX_STEP_TEXT}`]),
+    )
   })
 
   it('failes validation for a recipe with no steps', () => {

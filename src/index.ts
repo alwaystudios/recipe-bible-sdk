@@ -1,6 +1,12 @@
 import { Ingredient, Measure, Nutrition, Recipe, Step, User } from './types'
 import { testIngredient, testRecipe, testStep, testUser } from './test/testFactories'
-import { validateRecipe, MAX_INGREDIENTS, MAX_STEPS } from './recipe/validateRecipe'
+import {
+  validateRecipe,
+  MAX_INGREDIENTS,
+  MAX_STEPS,
+  MAX_STEP_TEXT,
+  MAX_TITLE,
+} from './recipe/validateRecipe'
 import { RecipeValidationError } from './errorTypes'
 import { truthy } from './truthy'
 import { CATEGORIES } from './categories'
@@ -32,6 +38,8 @@ export {
   validateRecipe,
   MAX_INGREDIENTS,
   MAX_STEPS,
+  MAX_STEP_TEXT,
+  MAX_TITLE,
   truthy,
   CATEGORIES,
   calculateRatingDetails,

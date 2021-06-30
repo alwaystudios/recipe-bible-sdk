@@ -2,11 +2,23 @@
 import { Recipe } from '../types'
 import { RecipeValidationError } from '../errorTypes'
 
-export const MAX_INGREDIENTS = 40
+export const MAX_STEP_TEXT = 200
+export const MAX_TITLE = 50
 export const MAX_STEPS = 25
+export const MAX_INGREDIENTS = 25
 
 export const validateRecipe = (recipe: Recipe): RecipeValidationError | null => {
   const errs: string[] = []
+
+  recipe.steps.map((step) => {
+    if (step.step.length > MAX_STEP_TEXT) {
+      errs.push(`exceeds max step length: ${MAX_STEP_TEXT}`)
+    }
+  })
+
+  if (recipe.title.length > MAX_TITLE) {
+    errs.push(`exceeds max title length: ${MAX_TITLE}`)
+  }
 
   if (recipe.steps.length === 0) {
     errs.push('must contain at least 1 step')
