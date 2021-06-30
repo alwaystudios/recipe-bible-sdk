@@ -28,6 +28,17 @@ export type Metadata = {
 }
 
 export type Measure = 'qty' | 'g' | 'ml' | 'tsp' | 'tbsp' | 'handful' | 'cup' | 'slice(s)' | 'kg'
+export const Measures: Measure[] = [
+  'qty',
+  'g',
+  'ml',
+  'tsp',
+  'tbsp',
+  'handful',
+  'cup',
+  'slice(s)',
+  'kg',
+]
 
 export type Ingredient = {
   name: string

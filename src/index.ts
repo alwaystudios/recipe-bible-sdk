@@ -1,4 +1,4 @@
-import { Ingredient, Measure, Nutrition, Recipe, Step, User } from './types'
+import { Ingredient, Measure, Measures, Nutrition, Recipe, Step, User } from './types'
 import { testIngredient, testRecipe, testStep, testUser } from './test/testFactories'
 import {
   validateRecipe,
@@ -26,6 +26,7 @@ export {
   getSlug,
   toSlug,
   recipeTitleTransformer,
+  Measures,
   Measure,
   Ingredient,
   Step,
