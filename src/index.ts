@@ -13,6 +13,7 @@ import { CATEGORIES } from './categories'
 import {
   calculateRatingDetails,
   depluralize,
+  getSlug,
   normalizeCategories,
   normalizeMeasure,
   pluralize,
@@ -22,6 +23,7 @@ import {
 import { kebabify, dekebabify } from './kebabify'
 
 export {
+  getSlug,
   toSlug,
   recipeTitleTransformer,
   Measure,

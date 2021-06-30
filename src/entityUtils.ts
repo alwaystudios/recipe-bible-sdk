@@ -114,3 +114,5 @@ export const recipeTitleTransformer = (title: string) => {
 }
 
 export const toSlug = (value: string) => kebabify(value.toLocaleLowerCase())
+
+export const getSlug = (value: string): string => value.substring(value.lastIndexOf('/') + 1)

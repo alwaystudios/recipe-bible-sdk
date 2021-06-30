@@ -6,6 +6,7 @@ import {
   calculateRatingDetails,
   recipeTitleTransformer,
   toSlug,
+  getSlug,
 } from './entityUtils'
 import { Measure } from './types'
 import { CATEGORIES } from './categories'
@@ -13,6 +14,18 @@ import { CATEGORIES } from './categories'
 describe('entity utils', () => {
   it('toSlug', () => {
     expect(toSlug('  This is My recipe sluG  ')).toBe('this-is-my-recipe-slug')
+  })
+
+  describe('getSlug', () => {
+    it('get the slug from a valid url', () => {
+      expect(getSlug('http://localhost:4566/recipe-bible-content/recipes/asdf/test.jpg')).toBe(
+        'test.jpg',
+      )
+    })
+
+    it('default to value for invalid url', () => {
+      expect(getSlug('test.jpg')).toBe('test.jpg')
+    })
   })
 
   it('recipeTitleTransformer', () => {
