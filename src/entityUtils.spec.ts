@@ -7,11 +7,23 @@ import {
   recipeTitleTransformer,
   toSlug,
   getSlug,
+  toIngredientRecord,
 } from './entityUtils'
 import { Measure } from './types'
 import { CATEGORIES } from './categories'
 
 describe('entity utils', () => {
+  test.each([
+    ['Potatoes', 'potato'],
+    ['tomatoeS', 'tomato'],
+    ['peas', 'peas'],
+    ['Eggs', 'egg'],
+    ['French Bread', 'french-bread'],
+    ['boilded eggs', 'boilded-egg'],
+  ])('toIngredientRecord %s => $s', (ingredient, expectedValue) => {
+    expect(toIngredientRecord(ingredient)).toEqual(expectedValue)
+  })
+
   it('toSlug', () => {
     expect(toSlug('  This is My recipe sluG  ')).toBe('this-is-my-recipe-slug')
   })
