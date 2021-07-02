@@ -119,3 +119,29 @@ export const getSlug = (value: string): string => value.substring(value.lastInde
 
 export const toIngredientRecord = (ingredient: string) =>
   depluralize(kebabify(ingredient.toLocaleLowerCase())).toLowerCase()
+
+export const concatenate = (...fragments: (string | null | undefined | false)[]): string => {
+  const quantity: Measure = 'qty'
+  return fragments
+    .filter(Boolean)
+    .filter((s) => s !== quantity)
+    .filter(Boolean)
+    .join(' ')
+}
+
+interface ToIngredientLabel {
+  name: string
+  quantity?: string
+  measure?: Measure
+}
+
+export const toIngredientLabel = ({ name, quantity, measure }: ToIngredientLabel) => {
+  if (!quantity || !measure) {
+    return name
+  }
+
+  const normalizedQuatity = normalizeMeasure(quantity, measure)
+  const displayName = dekebabify(name)
+  const pluralizedName = pluralize(displayName, quantity, measure)
+  return concatenate(normalizedQuatity, measure, pluralizedName)
+}

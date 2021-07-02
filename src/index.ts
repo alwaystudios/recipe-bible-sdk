@@ -12,18 +12,22 @@ import { truthy } from './truthy'
 import { CATEGORIES } from './categories'
 import {
   calculateRatingDetails,
+  concatenate,
   depluralize,
   getSlug,
   normalizeCategories,
   normalizeMeasure,
   pluralize,
   recipeTitleTransformer,
+  toIngredientLabel,
   toIngredientRecord,
   toSlug,
 } from './entityUtils'
 import { kebabify, dekebabify } from './kebabify'
 
 export {
+  concatenate,
+  toIngredientLabel,
   toIngredientRecord,
   getSlug,
   toSlug,

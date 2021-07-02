@@ -8,6 +8,8 @@ import {
   toSlug,
   getSlug,
   toIngredientRecord,
+  concatenate,
+  toIngredientLabel,
 } from './entityUtils'
 import { Measure } from './types'
 import { CATEGORIES } from './categories'
@@ -208,5 +210,54 @@ describe('entity utils', () => {
     expect(normalizeCategories(['invalid', ...CATEGORIES, 'another invalid', ''])).toEqual(
       CATEGORIES,
     )
+  })
+
+  describe('concatenate', () => {
+    it('joins fragments', () => {
+      expect(concatenate('a', 'b', 'c')).toBe('a b c')
+    })
+
+    it('ignores Measure.quantity', () => {
+      expect(concatenate('a', 'qty', 'c')).toBe('a c')
+    })
+
+    it('joins fragments, omitting falsy elements', () => {
+      expect(concatenate('a', 'b', '', null, false, undefined, 'c')).toBe('a b c')
+    })
+
+    it('ignores undefined quantity', () => {
+      expect(concatenate('a', 'qty', undefined)).toBe('a')
+    })
+  })
+
+  describe('toIngredientLabel', () => {
+    const name = 'blue cheese'
+    const quantity = '100'
+    const measure = 'g'
+
+    test.each<[string, string, Measure, string]>([
+      [name, quantity, measure, '100 g blue cheese'],
+      [name, '1', 'qty', '1 blue cheese'],
+      [name, '2', 'qty', '2 blue cheeses'],
+      [name, '2', 'kg', '2 kg blue cheese'],
+    ])('supplies a label to an ingredient', (name, quantity, measure, expected) => {
+      const result = toIngredientLabel({ name, quantity, measure })
+      expect(result).toEqual(expected)
+    })
+
+    it('ignores null quantities', () => {
+      const result = toIngredientLabel({ name, measure })
+      expect(result).toEqual('blue cheese')
+    })
+
+    it('ignores null measures', () => {
+      const result = toIngredientLabel({ name, quantity })
+      expect(result).toEqual('blue cheese')
+    })
+
+    it('ignores null quantities and measures', () => {
+      const result = toIngredientLabel({ name })
+      expect(result).toEqual('blue cheese')
+    })
   })
 })
