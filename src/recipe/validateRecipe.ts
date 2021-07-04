@@ -2,10 +2,10 @@
 import { Recipe } from '../types'
 import { RecipeValidationError } from '../errorTypes'
 
-export const MAX_STEP_TEXT = 200
-export const MAX_TITLE = 50
-export const MAX_STEPS = 25
-export const MAX_INGREDIENTS = 25
+export const MAX_STEP_TEXT = 400
+export const MAX_TITLE = 60
+export const MAX_STEPS = 30
+export const MAX_INGREDIENTS = 30
 
 export const validateRecipe = (recipe: Recipe): RecipeValidationError | null => {
   const errs: string[] = []
