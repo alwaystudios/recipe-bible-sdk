@@ -42,8 +42,8 @@ export const Measures: Measure[] = [
 
 export type Ingredient = {
   name: string
-  quantity: string | number
-  measure: Measure
+  quantity?: string | number
+  measure?: Measure
   imgSrc?: string
 }
 
