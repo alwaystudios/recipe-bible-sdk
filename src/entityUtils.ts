@@ -136,12 +136,13 @@ interface ToIngredientLabel {
 }
 
 export const toIngredientLabel = ({ name, quantity, measure }: ToIngredientLabel) => {
+  const displayName = dekebabify(name)
+
   if (!quantity || !measure) {
-    return name
+    return displayName
   }
 
   const normalizedQuatity = normalizeMeasure(quantity, measure)
-  const displayName = dekebabify(name)
   const pluralizedName = pluralize(displayName, quantity, measure)
   return concatenate(normalizedQuatity, measure, pluralizedName)
 }

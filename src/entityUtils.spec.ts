@@ -231,7 +231,7 @@ describe('entity utils', () => {
   })
 
   describe('toIngredientLabel', () => {
-    const name = 'blue cheese'
+    const name = 'blue-cheese'
     const quantity = '100'
     const measure = 'g'
 
