@@ -1,4 +1,4 @@
-import { Ingredient, Measure, Measures, Nutrition, Recipe, Step, User } from './types'
+import { Ingredient, Measure, Measures, Nutrition, Recipe, Step, User, Advert } from './types'
 import { testIngredient, testRecipe, testStep, testUser } from './test/testFactories'
 import {
   validateRecipe,
@@ -26,6 +26,7 @@ import {
 import { kebabify, dekebabify } from './kebabify'
 
 export {
+  Advert,
   concatenate,
   toIngredientLabel,
   toIngredientRecord,

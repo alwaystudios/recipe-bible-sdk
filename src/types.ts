@@ -83,3 +83,8 @@ export type User = {
   at_hash: string
   nonce: string
 }
+
+export type Advert = {
+  src: string
+  href: string
+}
