@@ -1,5 +1,5 @@
-import { Recipe, Ingredient, Step, User } from '../types'
-import { datatype, lorem, system } from 'faker'
+import { Recipe, Ingredient, Step, User, Advert } from '../types'
+import { datatype, internet, lorem, system } from 'faker'
 
 export const testIngredient = (overrides?: Partial<Ingredient>): Ingredient => ({
   name: lorem.word(),
@@ -57,5 +57,11 @@ export const testUser = (overrides?: Partial<User>): User => ({
   exp: 1621269349,
   at_hash: 'abc',
   nonce: 'abc',
+  ...overrides,
+})
+
+export const testAdvert = (overrides?: Partial<Advert>): Advert => ({
+  src: internet.url(),
+  href: internet.url(),
   ...overrides,
 })

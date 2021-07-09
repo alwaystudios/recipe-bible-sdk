@@ -1,5 +1,5 @@
 import { Ingredient, Measure, Measures, Nutrition, Recipe, Step, User, Advert } from './types'
-import { testIngredient, testRecipe, testStep, testUser } from './test/testFactories'
+import { testAdvert, testIngredient, testRecipe, testStep, testUser } from './test/testFactories'
 import {
   validateRecipe,
   MAX_INGREDIENTS,
@@ -27,6 +27,7 @@ import { kebabify, dekebabify } from './kebabify'
 
 export {
   Advert,
+  testAdvert,
   concatenate,
   toIngredientLabel,
   toIngredientRecord,
