@@ -88,3 +88,8 @@ export type Advert = {
   src: string
   href: string
 }
+
+export type RecipeRating = {
+  title: string
+  rating: number
+}

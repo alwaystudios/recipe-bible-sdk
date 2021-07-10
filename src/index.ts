@@ -1,5 +1,22 @@
-import { Ingredient, Measure, Measures, Nutrition, Recipe, Step, User, Advert } from './types'
-import { testAdvert, testIngredient, testRecipe, testStep, testUser } from './test/testFactories'
+import {
+  Ingredient,
+  Measure,
+  Measures,
+  Nutrition,
+  Recipe,
+  Step,
+  User,
+  Advert,
+  RecipeRating,
+} from './types'
+import {
+  testAdvert,
+  testIngredient,
+  testRecipe,
+  testRecipeRating,
+  testStep,
+  testUser,
+} from './test/testFactories'
 import {
   validateRecipe,
   MAX_INGREDIENTS,
@@ -26,6 +43,8 @@ import {
 import { kebabify, dekebabify } from './kebabify'
 
 export {
+  RecipeRating,
+  testRecipeRating,
   Advert,
   testAdvert,
   concatenate,
