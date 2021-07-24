@@ -36,5 +36,13 @@ export const validateRecipe = (recipe: Recipe): RecipeValidationError | null => 
     errs.push(`exceeds max ingredients count: ${MAX_INGREDIENTS}`)
   }
 
+  if (recipe.servings <= 0) {
+    errs.push(`servings not set`)
+  }
+
+  if (!recipe.cookingTime) {
+    errs.push(`cooking time not set`)
+  }
+
   return errs.length ? new RecipeValidationError('Recipe is invalid', errs) : null
 }

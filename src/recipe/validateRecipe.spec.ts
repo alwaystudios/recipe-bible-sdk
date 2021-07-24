@@ -22,6 +22,18 @@ describe('validate recipes', () => {
     )
   })
 
+  it('failes validation for a recipe where servings not set', () => {
+    expect(validateRecipe({ ...recipe, servings: 0 })).toEqual(
+      new RecipeValidationError('Recipe is invalid', [`servings not set`]),
+    )
+  })
+
+  it('failes validation for a recipe where cooking time not set', () => {
+    expect(validateRecipe({ ...recipe, cookingTime: '' })).toEqual(
+      new RecipeValidationError('Recipe is invalid', [`cooking time not set`]),
+    )
+  })
+
   it('failes validation for a recipe with steps that exceed the max length', () => {
     const step = [...Array(MAX_STEP_TEXT + 1)].map(() => 'a').join('')
     expect(validateRecipe({ ...recipe, steps: [{ step }] })).toEqual(
