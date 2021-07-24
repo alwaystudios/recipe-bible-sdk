@@ -22,6 +22,12 @@ describe('validate recipes', () => {
     )
   })
 
+  it('failes validation for a recipe where no categories are set', () => {
+    expect(validateRecipe({ ...recipe, categories: [] })).toEqual(
+      new RecipeValidationError('Recipe is invalid', [`must have at least 1 category`]),
+    )
+  })
+
   it('failes validation for a recipe where servings not set', () => {
     expect(validateRecipe({ ...recipe, servings: 0 })).toEqual(
       new RecipeValidationError('Recipe is invalid', [`servings not set`]),

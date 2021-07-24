@@ -44,5 +44,9 @@ export const validateRecipe = (recipe: Recipe): RecipeValidationError | null => 
     errs.push(`cooking time not set`)
   }
 
+  if (!recipe.categories.length) {
+    errs.push(`must have at least 1 category`)
+  }
+
   return errs.length ? new RecipeValidationError('Recipe is invalid', errs) : null
 }
