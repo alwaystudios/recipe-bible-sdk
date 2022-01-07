@@ -1,5 +1,6 @@
 export type Category =
   | 'Chicken'
+  | 'Poultry'
   | 'Meat'
   | 'Fish'
   | 'Pasta'
