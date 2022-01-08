@@ -41,8 +41,10 @@ import {
   toSlug,
 } from './entityUtils'
 import { kebabify, dekebabify } from './kebabify'
+import { normalizeRecipe } from './recipe/recipeTransformers'
 
 export {
+  normalizeRecipe,
   RecipeRating,
   testRecipeRating,
   Advert,
