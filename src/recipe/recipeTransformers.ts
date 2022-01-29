@@ -1,7 +1,7 @@
 import { Category, Recipe } from '../types'
 
 export const normalizeRecipe = (recipe: Recipe): Recipe => {
-  const { categories } = recipe
+  const { categories = [] } = recipe
 
   const normalizedCategories = categories.reduce<Category[]>((acc, curr) => {
     const currIsChicken = curr.toString() === 'Chicken'
